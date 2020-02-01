@@ -10,7 +10,8 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 
 ]
-Post.objects.get(pk=pk)
+
 def post_detail(request, pk):
+    Post.objects.get(pk=pk)
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
