@@ -1,4 +1,4 @@
-Post.objects.get(pk=pk)
+
 from django.shortcuts import render, get_object_or_404
 from django.urls import path
 from . import views
@@ -10,6 +10,7 @@ urlpatterns = [
     path('post/<int:pk>/edit/', views.post_edit, name='post_edit'),
 
 ]
+Post.objects.get(pk=pk)
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
